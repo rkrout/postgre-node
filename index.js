@@ -1,15 +1,15 @@
 const express = require("express")
 const app = express()
 
-//const { Client } = require("pg")
+const { Client } = require("pg")
 
-//const client = new Client({
-    //connectionString: process.env.URI
-//})
-//client.connect()
+const client = new Client({
+    connectionString: process.env.URI
+})
+client.connect()
 
-app.get("/1029384756", async(req, res) => {
-    res.json(process.env.URI + process.env.DATABASE_URL)
+app.get("/", async(req, res) => {
+    res.json("Hellow")
 })
 
 app.get("/create-table", async(req, res) => {
