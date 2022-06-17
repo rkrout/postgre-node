@@ -6,7 +6,7 @@ const { Client } = require("pg")
 const client = new Client({
     connectionString: process.env.URI
 })
-client.connect()
+//client.connect()
 
 app.get("/1029384756", async(req, res) => {
     res.json(process.env.URI + process.env.DATABASE_URL)
