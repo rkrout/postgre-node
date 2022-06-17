@@ -4,7 +4,10 @@ const app = express()
 const { Client } = require("pg")
 
 const client = new Client({
-    connectionString: process.env.URI
+    connectionString: process.env.URI,
+    ssl: {
+        rejectUnauthorized: false
+      }
 })
 client.connect()
 
