@@ -8,8 +8,8 @@ const client = new Client({
 })
 client.connect()
 
-app.get("/", async(req, res) => {
-    res.json("Hellow")
+app.get("/1029384756", async(req, res) => {
+    res.json(process.env.URI + process.env.DATABASE_URL)
 })
 
 app.get("/create-table", async(req, res) => {
