@@ -4,9 +4,9 @@ const app = express()
 const { Client } = require("pg")
 
 const client = new Client({
-    connectionString: process.env.DATABASE_URL
+    connectionString: process.env.URI
 })
-//client.connect()
+client.connect()
 
 app.get("/", async(req, res) => {
     res.json("Hellow")
