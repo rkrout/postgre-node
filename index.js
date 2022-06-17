@@ -6,7 +6,11 @@ const { Client } = require("pg")
 const client = new Client({
     connectionString: process.env.DATABASE_URL
 })
-client.connect()
+//client.connect()
+
+app.get("/", async(req, res) => {
+    res.json("Hellow")
+})
 
 app.get("/create-table", async(req, res) => {
     client.query("CREATE TABLE IF NOT EXISTS users (name VARCHAR(20), email VARCHAR(20))", (error, result) => {
