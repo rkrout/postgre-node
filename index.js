@@ -15,30 +15,12 @@ app.get("/", async(req, res) => {
     res.json("Hellow")
 })
 
-app.get("/create-table", async(req, res) => {
-    client.query("CREATE TABLE IF NOT EXISTS users (name VARCHAR(20), email VARCHAR(20))", (error, result) => {
-        if(error){
-            return res.json(error)
-        }
-        res.json(result)
-    })
-})
-
-app.get("/insert-data", async(req, res) => {
-    client.query("INSERT INTO users (name, email) VALUES ('rajesh', 'rajesh@rajesh.com')", (error, result) => {
-        if(error){
-            return res.json(error)
-        }
-        res.json(result)
-    })
-})
-
 app.get("/read-data", async(req, res) => {
     client.query("SELECT * FROM users", (error, result) => {
         if(error){
             return res.json(error)
         }
-        res.json(result)
+        res.json(result.rows)
     })
 })
 
